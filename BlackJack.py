@@ -1,18 +1,18 @@
 from random import randint
 import os
 
-def deck(): ##Function for define de card
+def deck(): ##Function for define the card
     Value=["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
-    Tipo=["C","D","T","P"]
+    Tipo=["Hearts","Diamons","Clovers","Spades"]
     card=[]
 
     for i in Tipo:
         for j in Value:
-            card.append(j+ "of" + i +" ")
+            card.append(j+ " of " + i +" - ")
     return card
 
 
-def value(cardvalue): ## Function for define de card value
+def value(cardvalue): ## Function for define the card value
     if cardvalue[:1] in ("J","Q","K","1"):
         return int(10)
     elif cardvalue[:1] in ("2","3","4","5","6","7","8","9","10"):
@@ -43,6 +43,7 @@ while True: #Inicio de programa
     new_deck=deck()
     playerCards = {}
     playerValue = {}
+
     for i in range(Players): #First hand, two cards for all the players
         
         card1=new_card(new_deck)
